@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "deny": [
+      "edit:.claude/CLAUDE.md",
+      "edit:.claude/tasks/*"
+    ]
+  }
+}
