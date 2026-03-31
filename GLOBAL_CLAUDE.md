@@ -13,6 +13,11 @@
 - Avoid changing file names, directory structure, or public APIs unless necessary.
 - If the task spans multiple systems or layers, confirm scope before proceeding.
 
+## Memory
+- As decisions are made, summarize decision points and preserve it in the project root's .claude/memories/decisions.md file.
+- Prune decisions.md to contain only the most recent 20 made decisions while deleting the rest.
+- Ensure decision points are concise, short, but detailed to discern its action or intent.
+
 ## Safety
 - Never modify secrets, credentials, or private keys.
 - Be careful with migrations, infrastructure, auth, and deployment files.
