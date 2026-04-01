@@ -10,6 +10,7 @@
 - Ask one clarifying question only if the task is truly ambiguous. Otherwise proceed with reasonable assumptions and state them.
 - Verify changes with the smallest useful test or command.
 - Do not refactor unrelated code.
+- Avoid calling functions or properties that do not already exist, unless explicitly asked.
 - Avoid changing file names, directory structure, or public APIs unless necessary.
 - If the task spans multiple systems or layers, confirm scope before proceeding.
 
