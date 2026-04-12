@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/xliang/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/**)",
+      "Bash(mkdir -p telemetry/tracing metrics logging)",
+      "Bash(mv jaeger-version-management.md opentelemetry-version-management.md telemetry/tracing/)",
+      "Bash(mv prometheus-version-management.md metrics/)",
+      "Bash(mv loki-version-management.md logging/)"
+    ],
+    "additionalDirectories": [
+      "/Users/xliang/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/infra-version-management",
+      "/Volumes/Files/AI/config/claude-config/.claude"
+    ]
+  }
+}

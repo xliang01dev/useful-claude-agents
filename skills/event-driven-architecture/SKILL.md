@@ -76,26 +76,16 @@ description: Use when designing or troubleshooting event-driven systems - guides
 
 ## 4. Infrastructure Setup
 
-**Outcome:** Establish stable, versioned infrastructure that prevents cascade failures from version mismatches. Support architecture decisions with properly configured services and compatibility verification.
+**REQUIRED SUB-SKILL:** Use infra-version-management for infrastructure versioning and compatibility.
 
-**When:** Adding or upgrading observability/infrastructure (Jaeger, Loki, Prometheus, OpenTelemetry)
+Event-driven systems depend on stable, versioned infrastructure. Version mismatches cascade (e.g., SDK incompatible with exporter = import errors = no metrics = alerts fail).
 
-**Patterns & Principles:**
-- Pin versions explicitly, never `latest`: Verify image:tag correspondence actually matches version - cached images can be stale; prevents cascade failures
-- Read migration guides first: Major version upgrades have breaking changes - v1→v2 transitions are often architectural rewrites, not incremental; requires config rewrite
-- Verify SDK/exporter/instrumentation compatibility: Pin all to same minor version range - version mismatches cascade quickly (e.g., SDK incompatible with exporter causes import errors)
-- Test locally before deploying: Validate config syntax; simplify single-instance configs (remove HA features, disable WAL, use inmemory kvstore) - enterprise configs add unnecessary complexity
-
-**Checklist:**
-- [ ] Pin all versions explicitly (no `latest` tags)
-- [ ] Verify image name matches version (jaegertracing/all-in-one ≠ jaegertracing/jaeger)
-- [ ] Read breaking changes for major versions
-- [ ] Check OpenTelemetry compatibility (SDK + exporter + instrumentation same minor version)
-- [ ] Test config locally (docker-compose config, kubectl --dry-run, terraform validate)
-- [ ] Simplify single-instance configs (remove HA features, use inmemory kvstore, disable WAL)
-- [ ] Document in infrastructure-versions.md
-
-**Reference:** [infrastructure-version-management.md](infrastructure-version-management.md)
+Delegate to infra-version-management skill for:
+- Pinning versions explicitly
+- Verifying SDK/exporter/instrumentation compatibility
+- Reading breaking changes before upgrades
+- Testing configs locally
+- Documenting infrastructure versions
 
 ---
 
